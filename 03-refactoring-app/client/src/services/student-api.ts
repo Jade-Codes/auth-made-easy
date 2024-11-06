@@ -1,4 +1,6 @@
-import apiClient from './api-client';
+import axios from 'axios';
+
+const API_URL = "http://localhost:8000/api"
 
 export interface Student {
   id: number;
@@ -10,25 +12,25 @@ export interface Student {
 }
 
 export const getStudents = async (): Promise<Student[]> => {
-  const response = await apiClient(`/students`);
+  const response = await axios.get(`${API_URL}/students`);
   return response.data;
 };
 
 export const getStudent = async (id: number): Promise<Student> => {
-  const response = await apiClient(`/students/${id}`);
+  const response = await axios.get(`${API_URL}/students/${id}`);
   return response.data;
 };
 
 export const createStudent = async (student: Student): Promise<Student> => {
-  const response = await apiClient.post(`/students`, student);
+  const response = await axios.post(`${API_URL}/students`, student);
   return response.data;
 };
 
 export const updateStudent = async (id: number, student: Student): Promise<Student> => {
-  const response = await apiClient.put(`/students/${id}`, student);
+  const response = await axios.put(`${API_URL}/students/${id}`, student);
   return response.data;
 };
 
 export const deleteStudent = async (id: number): Promise<void> => {
-  await apiClient.delete(`/students/${id}`);
+  await axios.delete(`${API_URL}/students/${id}`);
 };

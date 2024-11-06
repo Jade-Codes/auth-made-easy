@@ -21,4 +21,4 @@ app.add_middleware(CORSMiddleware,
     allow_methods=["*"],
     allow_headers=["*"])
 
-app.include_router(students.router, dependencies=[Security(azure_scheme, scopes=["access_as_user"])])
+app.include_router(students.router)

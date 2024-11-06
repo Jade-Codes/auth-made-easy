@@ -1,10 +1,9 @@
 
-from logging.config import dictConfig
 from fastapi import FastAPI, Security
 from fastapi.middleware.cors import CORSMiddleware
-from api.auth import azure_scheme
+from auth import azure_scheme
 
-from api.students import students
+from students import students
 
 app = app = FastAPI(
     swagger_ui_oauth2_redirect_url='/oauth2-redirect',
@@ -16,9 +15,9 @@ app = app = FastAPI(
 )
 
 app.add_middleware(CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["http//localhost:5173"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"])
 
-app.include_router(students.router, dependencies=[Security(azure_scheme, scopes=["access_as_user"])])
+app.include_router(students.router, dependencies=[Security(azure_scheme)])
