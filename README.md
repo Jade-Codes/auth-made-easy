@@ -18,6 +18,5 @@ For each of the episodes, please can you see the corresponding blog posts and/or
 - [YouTube 2](https://www.youtube.com/live/43T2xeLtXek?si=Fx8E4OQg22E07p-G)
 
 04 MSAL with React Access Token:
-- [Blog Post]()
-- [YouTube]()
-TODO: Update 04 links when available
+- [Blog Post](https://jadecodes.substack.com/p/auth-made-easy-msal-react-and-access)
+- [YouTube](https://www.youtube.com/watch?v=4ERYVgW027A)
