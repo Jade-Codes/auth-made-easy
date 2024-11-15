@@ -11,14 +11,19 @@
       },
       {
         "name": "Frontend",
-        "type": "chrome",
+        "type": "msedge",
         "request": "launch",
         "url": "http://localhost:5173",
         "webRoot": "${workspaceFolder}/client",
         "sourceMaps": true,
-        "sourceMapPathOverrides": {
-          "webpack:///./src/*": "${webRoot}/src/*"
-        }
+        "trace": true,
+        "preLaunchTask": "Run Frontend Dev Server"
+      }
+    ],
+    "compounds": [
+      {
+        "name": "Launch Backend and Frontend",
+        "configurations": ["Backend", "Frontend"]
       }
     ]
   }

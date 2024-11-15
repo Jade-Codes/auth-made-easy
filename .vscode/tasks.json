@@ -1,0 +1,28 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Run Frontend Dev Server",
+        "type": "shell",
+        "command": "npm",
+        "args": ["run", "dev"],
+        "group": "build",
+        "isBackground": true,
+        "problemMatcher":  {
+            "owner": "custom",
+            "pattern": {
+                "regexp": "^$",
+            },
+            "background": {
+                "activeOnStart": true,
+                "beginsPattern": ".*vite.*",
+                "endsPattern": ".*ready in.*"
+            }
+        },
+        "options": {
+          "cwd": "${workspaceFolder}/client"
+        }
+      }
+    ]
+  }
+  
